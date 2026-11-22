@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     cache_max_items: int = 10_000
     rate_limit_per_minute: int = 30
     auto_create_tables: bool = True
+    click_flush_seconds: float = 2.0
 
 
 @lru_cache

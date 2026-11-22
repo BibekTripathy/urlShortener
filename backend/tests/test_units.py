@@ -2,7 +2,7 @@ import asyncio
 from datetime import UTC, datetime, timedelta
 
 from app.cache import MemoryCache, _dump, _load
-from app.ratelimit import RateLimiter
+from app.ratelimit import MemoryRateLimiter
 from app.service import is_expired, new_code
 
 
@@ -41,7 +41,6 @@ def test_cache_serialization_roundtrip():
     assert _load(_dump(("https://x", None))) == ("https://x", None)
 
 
-def test_rate_limiter():
-    rl = RateLimiter(limit=2, window=60)
-    assert [rl.allow("ip"), rl.allow("ip"), rl.allow("ip"), rl.allow("other")] == [
-        True, True, False, True]
+async def test_memory_rate_limiter():
+    rl = MemoryRateLimiter(limit=2, window=60)
+    assert [await rl.allow(k) for k in ("ip", "ip", "ip", "other")] == [True, True, False, True]

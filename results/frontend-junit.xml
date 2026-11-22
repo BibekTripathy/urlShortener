@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="8" failures="0" errors="0" time="0.416522578">
-    <testsuite name="src/App.test.tsx" timestamp="2026-11-22T20:06:00.076Z" hostname="ArchLOQ" tests="6" failures="0" errors="0" skipped="0" time="0.412311152">
-        <testcase classname="src/App.test.tsx" name="App &gt; renders the form with submit disabled until a URL is typed" time="0.118197126">
+<testsuites name="vitest tests" tests="8" failures="0" errors="0" time="0.41415186">
+    <testsuite name="src/App.test.tsx" timestamp="2026-11-22T20:24:12.875Z" hostname="ArchLOQ" tests="6" failures="0" errors="0" skipped="0" time="0.409937588">
+        <testcase classname="src/App.test.tsx" name="App &gt; renders the form with submit disabled until a URL is typed" time="0.119548924">
         </testcase>
-        <testcase classname="src/App.test.tsx" name="App &gt; creates a link via the API and lists it" time="0.085822541">
+        <testcase classname="src/App.test.tsx" name="App &gt; creates a link via the API and lists it" time="0.074617057">
         </testcase>
-        <testcase classname="src/App.test.tsx" name="App &gt; sends alias and expiry options" time="0.092606498">
+        <testcase classname="src/App.test.tsx" name="App &gt; sends alias and expiry options" time="0.097829521">
         </testcase>
-        <testcase classname="src/App.test.tsx" name="App &gt; shows API error messages" time="0.05302094">
+        <testcase classname="src/App.test.tsx" name="App &gt; shows API error messages" time="0.055043534">
         </testcase>
-        <testcase classname="src/App.test.tsx" name="App &gt; formats validation errors" time="0.053249906">
+        <testcase classname="src/App.test.tsx" name="App &gt; formats validation errors" time="0.052353423">
         </testcase>
-        <testcase classname="src/App.test.tsx" name="App &gt; refreshes click counts for stored links on load" time="0.008072614">
+        <testcase classname="src/App.test.tsx" name="App &gt; refreshes click counts for stored links on load" time="0.009260994">
         </testcase>
     </testsuite>
-    <testsuite name="src/storage.test.ts" timestamp="2026-11-22T20:06:00.077Z" hostname="ArchLOQ" tests="2" failures="0" errors="0" skipped="0" time="0.004211426">
-        <testcase classname="src/storage.test.ts" name="storage &gt; returns [] for empty or corrupt storage" time="0.002153083">
+    <testsuite name="src/storage.test.ts" timestamp="2026-11-22T20:24:12.876Z" hostname="ArchLOQ" tests="2" failures="0" errors="0" skipped="0" time="0.004214272">
+        <testcase classname="src/storage.test.ts" name="storage &gt; returns [] for empty or corrupt storage" time="0.002204942">
         </testcase>
-        <testcase classname="src/storage.test.ts" name="storage &gt; caps the list at 8 entries" time="0.000878014">
+        <testcase classname="src/storage.test.ts" name="storage &gt; caps the list at 8 entries" time="0.000837348">
         </testcase>
     </testsuite>
 </testsuites>

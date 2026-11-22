@@ -50,3 +50,14 @@ docker-compose.yml, .env.example, README.md
 - ✅ Tests must not need Postgres/Redis → SQLite + LRU fallback is exercised by tests; the same code path is used in prod with env vars.
 - ✅ Routing conflict between SPA and short codes: nginx sends `/` and `/assets/*` to the SPA, everything matching the code pattern to the API.
 - ⚠️ Actual hosting needs your account (VPS/Fly/Render, or Vercel for the frontend). Compose works on any Docker host; added to "next steps".
+
+## v0.2 (done)
+- Redis-backed rate limiter shared across workers (in-memory fallback kept).
+- Buffered click counting (Redis hash → batched DB writes) — removed per-redirect UPDATEs.
+- nginx upstream keepalive — fixed 502s under load found by benchmarking.
+- Load benchmark script → `results/BENCHMARK.md`.
+- GitHub Actions CI: lint, tests, results artifact, Docker build + smoke test.
+
+## Later
+- Alembic migrations once the schema changes for the first time.
+- Deployment on own server behind TLS (Caddy/Cloudflare).

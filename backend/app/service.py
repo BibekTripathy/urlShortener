@@ -3,7 +3,7 @@ import string
 from datetime import UTC, datetime, timedelta
 from urllib.parse import urlsplit
 
-from sqlalchemy import select, update
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -60,7 +60,3 @@ async def create_link(
 async def get_link(s: AsyncSession, code: str) -> Link | None:
     return (await s.execute(select(Link).where(Link.code == code))).scalar_one_or_none()
 
-
-async def add_click(s: AsyncSession, code: str) -> None:
-    await s.execute(update(Link).where(Link.code == code).values(clicks=Link.clicks + 1))
-    await s.commit()

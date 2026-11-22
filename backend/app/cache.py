@@ -52,11 +52,8 @@ class MemoryCache:
 
 
 class RedisCache:
-    def __init__(self, url: str, ttl: int) -> None:
-        from redis.asyncio import Redis
-
-        self._r = Redis.from_url(url)
-        self.ttl = ttl
+    def __init__(self, redis, ttl: int) -> None:
+        self._r, self.ttl = redis, ttl
 
     async def get(self, code: str) -> CacheEntry | None:
         raw = await self._r.get(f"l:{code}")
